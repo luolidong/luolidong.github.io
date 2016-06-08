@@ -4,21 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>237. Delete Node in a Linked List | Luolidong blog</title>
+  <title>242. Valid Anagram | Luolidong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Write a function to delete a node (except the tail) in a &amp;gt;singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;gt;are &amp;gt;given the th">
+  <meta name="description" content="Given two strings s and t, write a function to determine if t is an anagram of s.
+For example,s = “anagram”, t = “nagaram”, return true.s = “rat”, t = “car”, return false.
+
+12345678910111213141516171">
 <meta property="og:type" content="article">
-<meta property="og:title" content="237. Delete Node in a Linked List">
-<meta property="og:url" content="http://yoursite.com/2016/06/08/DeleteNodeinaLinkedList/index.html">
+<meta property="og:title" content="242. Valid Anagram">
+<meta property="og:url" content="http://yoursite.com/2016/06/08/ValidAnagram/index.html">
 <meta property="og:site_name" content="Luolidong blog">
-<meta property="og:description" content="Write a function to delete a node (except the tail) in a &amp;gt;singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;gt;are &amp;gt;given the th">
-<meta property="og:updated_time" content="2016-06-08T04:02:23.486Z">
+<meta property="og:description" content="Given two strings s and t, write a function to determine if t is an anagram of s.
+For example,s = “anagram”, t = “nagaram”, return true.s = “rat”, t = “car”, return false.
+
+12345678910111213141516171">
+<meta property="og:updated_time" content="2016-06-08T08:41:38.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="237. Delete Node in a Linked List">
-<meta name="twitter:description" content="Write a function to delete a node (except the tail) in a &amp;gt;singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;gt;are &amp;gt;given the th">
+<meta name="twitter:title" content="242. Valid Anagram">
+<meta name="twitter:description" content="Given two strings s and t, write a function to determine if t is an anagram of s.
+For example,s = “anagram”, t = “nagaram”, return true.s = “rat”, t = “car”, return false.
+
+12345678910111213141516171">
   
     <link rel="alternative" href="/atom.xml" title="Luolidong blog" type="application/atom+xml">
   
@@ -128,11 +134,11 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-DeleteNodeinaLinkedList" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ValidAnagram" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/08/DeleteNodeinaLinkedList/" class="article-date">
-  	<time datetime="2016-06-08T04:00:35.000Z" itemprop="datePublished">2016-06-08</time>
+      <a href="/2016/06/08/ValidAnagram/" class="article-date">
+  	<time datetime="2016-06-08T08:39:06.000Z" itemprop="datePublished">2016-06-08</time>
 </a>
     </div>
   
@@ -145,7 +151,7 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
         
   
     <h1 class="article-title" itemprop="name">
-      237. Delete Node in a Linked List
+      242. Valid Anagram
     </h1>
   
 
@@ -162,10 +168,10 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Write a function to delete a node (except the tail) in a &gt;singly linked list, given only access to that node.</p>
-<p>Supposed the linked list is <code>1 -&gt; 2 -&gt; 3 -&gt; 4</code> and you &gt;are &gt;given the third node with value <code>3</code>, the linked list &gt;should &gt;become <code>1 -&gt; 2 -&gt; 4</code> after calling your function.</p>
+<p>Given two strings s and t, write a function to determine if t is an anagram of s.</p>
+<p>For example,<br>s = “anagram”, t = “nagaram”, return true.<br>s = “rat”, t = “car”, return false.</p>
 </blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        ListNode *tmp = node-&gt;next;</span><br><span class="line">        node-&gt;val = tmp-&gt;val;</span><br><span class="line">        node-&gt;next = tmp-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isAnagram</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[<span class="number">26</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span> (s.size() != t.size())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> len = s.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            a[s[i] - <span class="string">'a'</span>]++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">            a[t[i] - <span class="string">'a'</span>]--;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i] &gt; <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -174,18 +180,18 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
     
 <nav id="article-nav">
   
-    <a href="/2016/06/08/SameTree/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/08/ExcelSheetColumnNumber/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          100. Same Tree
+          171. Excel Sheet Column Number
         
       </div>
     </a>
   
   
-    <a href="/2016/06/08/MoveZeroes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">283. Move Zeroes</div>
+    <a href="/2016/06/08/SameTree/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">100. Same Tree</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

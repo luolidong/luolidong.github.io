@@ -4,21 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>237. Delete Node in a Linked List | Luolidong blog</title>
+  <title>171. Excel Sheet Column Number | Luolidong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Write a function to delete a node (except the tail) in a &amp;gt;singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;gt;are &amp;gt;given the th">
+  <meta name="description" content="Related to question Excel Sheet Column Title
+Given a column title as appear in an Excel sheet, return its corresponding column number.
+For example:
+A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3…Z -&amp;gt; 26AA -&amp;gt; 27AB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="237. Delete Node in a Linked List">
-<meta property="og:url" content="http://yoursite.com/2016/06/08/DeleteNodeinaLinkedList/index.html">
+<meta property="og:title" content="171. Excel Sheet Column Number">
+<meta property="og:url" content="http://yoursite.com/2016/06/08/ExcelSheetColumnNumber/index.html">
 <meta property="og:site_name" content="Luolidong blog">
-<meta property="og:description" content="Write a function to delete a node (except the tail) in a &amp;gt;singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;gt;are &amp;gt;given the th">
-<meta property="og:updated_time" content="2016-06-08T04:02:23.486Z">
+<meta property="og:description" content="Related to question Excel Sheet Column Title
+Given a column title as appear in an Excel sheet, return its corresponding column number.
+For example:
+A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3…Z -&amp;gt; 26AA -&amp;gt; 27AB">
+<meta property="og:updated_time" content="2016-06-08T09:41:08.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="237. Delete Node in a Linked List">
-<meta name="twitter:description" content="Write a function to delete a node (except the tail) in a &amp;gt;singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;gt;are &amp;gt;given the th">
+<meta name="twitter:title" content="171. Excel Sheet Column Number">
+<meta name="twitter:description" content="Related to question Excel Sheet Column Title
+Given a column title as appear in an Excel sheet, return its corresponding column number.
+For example:
+A -&amp;gt; 1B -&amp;gt; 2C -&amp;gt; 3…Z -&amp;gt; 26AA -&amp;gt; 27AB">
   
     <link rel="alternative" href="/atom.xml" title="Luolidong blog" type="application/atom+xml">
   
@@ -128,11 +134,11 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-DeleteNodeinaLinkedList" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ExcelSheetColumnNumber" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/08/DeleteNodeinaLinkedList/" class="article-date">
-  	<time datetime="2016-06-08T04:00:35.000Z" itemprop="datePublished">2016-06-08</time>
+      <a href="/2016/06/08/ExcelSheetColumnNumber/" class="article-date">
+  	<time datetime="2016-06-08T08:43:03.000Z" itemprop="datePublished">2016-06-08</time>
 </a>
     </div>
   
@@ -145,7 +151,7 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
         
   
     <h1 class="article-title" itemprop="name">
-      237. Delete Node in a Linked List
+      171. Excel Sheet Column Number
     </h1>
   
 
@@ -162,10 +168,15 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Write a function to delete a node (except the tail) in a &gt;singly linked list, given only access to that node.</p>
-<p>Supposed the linked list is <code>1 -&gt; 2 -&gt; 3 -&gt; 4</code> and you &gt;are &gt;given the third node with value <code>3</code>, the linked list &gt;should &gt;become <code>1 -&gt; 2 -&gt; 4</code> after calling your function.</p>
+<p>Related to question Excel Sheet Column Title</p>
+<p>Given a column title as appear in an Excel sheet, return its corresponding column number.</p>
+<p>For example:</p>
+<p>A -&gt; 1<br>B -&gt; 2<br>C -&gt; 3<br>…<br>Z -&gt; 26<br>AA -&gt; 27<br>AB -&gt; 28 </p>
 </blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        ListNode *tmp = node-&gt;next;</span><br><span class="line">        node-&gt;val = tmp-&gt;val;</span><br><span class="line">        node-&gt;next = tmp-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>题目分析：</p>
+<p>十进制数，按权展开，第一位权为10^0，第二位10^1……以此类推，第N位10^（N-1），该数的数值等于每位位的数值*该位对应的权值之和。因此可以推出此题的算法如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">titleToNumber</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len = s.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            num += <span class="built_in">pow</span>(<span class="number">26</span>,len - i - <span class="number">1</span>) * (s[i] - <span class="string">'A'</span> + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -174,18 +185,9 @@ Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you &amp;g
     
 <nav id="article-nav">
   
-    <a href="/2016/06/08/SameTree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          100. Same Tree
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/06/08/MoveZeroes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">283. Move Zeroes</div>
+    <a href="/2016/06/08/ValidAnagram/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">242. Valid Anagram</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
