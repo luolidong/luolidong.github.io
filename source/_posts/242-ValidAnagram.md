@@ -1,7 +1,7 @@
 ---
 title: 242. Valid Anagram
 date: 2016-06-08 16:39:06
-tags:
+tags: leetcode
 ---
 
 >Given two strings s and t, write a function to determine if t is an anagram of s.

@@ -1,7 +1,7 @@
 ---
 title: 171. Excel Sheet Column Number
 date: 2016-06-08 16:43:03
-tags:
+tags: leetcode
 ---
 
 >Related to question Excel Sheet Column Title

@@ -1,7 +1,7 @@
 ---
 title: 237. Delete Node in a Linked List
 date: 2016-06-08 12:00:35
-tags:
+tags: leetcode
 ---
 
 >Write a function to delete a node (except the tail) in a >singly linked list, given only access to that node.

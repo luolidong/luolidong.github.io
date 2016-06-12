@@ -1,7 +1,7 @@
 ---
 title: 100. Same Tree
 date: 2016-06-08 15:07:01
-tags:
+tags: leetcode
 ---
 
 >Given two binary trees, write a function to check if they are equal or not.
