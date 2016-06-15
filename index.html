@@ -58,6 +58,8 @@
 				        
 							<li><a href="/tags/leetcode">leetcode</a></li>
 				        
+							<li><a href="/tags/bigData">大数据</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
@@ -112,6 +114,8 @@
 		        
 					<li><a href="/tags/leetcode">leetcode</a></li>
 		        
+					<li><a href="/tags/bigData">大数据</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
@@ -125,6 +129,145 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-191-NumberofoneBits" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/15/191-NumberofoneBits/" class="article-date">
+  	<time datetime="2016-06-15T08:54:12.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/15/191-NumberofoneBits/">191. Number of 1 Bits</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Write a function that takes an unsigned integer and returns the number of ‘1’ bits it has (also known as the <a href="https://en.wikipedia.org/wiki/Hamming_weight" target="_blank" rel="external">Hamming weight</a>).</p>
+<p>For example, the 32-bit integer ‘11’ has binary representation <code>00000000000000000000000000001011</code>, so the function should return <code>3</code>.</p>
+<p>题意分析：<br>通过&amp;运算来判断每一位是否为1。</p>
+<p>方法一：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">32</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">uint32_t</span> num = <span class="number">1</span> &lt;&lt; i;</span><br><span class="line">            <span class="keyword">if</span> (num &gt; n)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> ((n &amp; num) &gt; <span class="number">0</span>)</span><br><span class="line">                sum++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>方法二：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> cant=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&amp;<span class="number">1</span>)&#123;</span><br><span class="line">        cant++;</span><br><span class="line">    &#125;</span><br><span class="line">    n=n&gt;&gt;<span class="number">1</span>;</span><br><span class="line">&#125;   </span><br><span class="line"><span class="keyword">return</span> cant;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-235-LowestCommonAncestorofaBinarySearchTree" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/15/235-LowestCommonAncestorofaBinarySearchTree/" class="article-date">
+  	<time datetime="2016-06-15T03:54:14.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/15/235-LowestCommonAncestorofaBinarySearchTree/">235. Lowest Common Ancestor of a Binary Search Tree</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</p>
+<p>According to the <a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor" target="_blank" rel="external">definition of LCA on Wikipedia</a>: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow <strong>a node to be a descendant of itself</strong>).”</p>
+<pre><code>      6
+   /     \
+  2       8
+ / \     / \
+0   4   7   9
+   / \
+  3   5
+</code></pre><p>For example, the lowest common ancestor (LCA) of nodes <code>2</code> and <code>8</code> is <code>6</code>. Another example is LCA of nodes <code>2</code> and <code>4</code> is <code>2</code>, since a node can be a descendant of itself according to the LCA definition.</p>
+</blockquote>
+<p>题意分析：</p>
+<p>BST（二叉搜索树）的定义，BST是满足如下3个条件的二叉树：</p>
+<ol>
+<li>节点的左子树包含的节点的值小于该节点的值</li>
+<li>节点的右子树包含的节点的值大于等于该节点的值</li>
+<li>节点的左子树和右子树都是BST</li>
+</ol>
+<p>LCA（最近公共祖先）的定义：<br>对于有根树T的两个结点u、v，最近公共祖先LCA(T,u,v)表示一个结点x，满足x是u、v的祖先且x的深度尽可能大。</p>
+<p>若root == p or root == q，则root为LCA。<br>若 root &lt; min(p,q),则LCA在root的右子树上。<br>若 root &gt; max(p,q),则LCA在root的左子树上。<br>若 min（p,q）&lt; root &lt; max(p,q),则LCA为root。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span> || p == <span class="literal">NULL</span> || q == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> min = p-&gt;val &gt; q-&gt;val ? q-&gt;val : p-&gt;val;</span><br><span class="line">        <span class="keyword">int</span> max = p-&gt;val &gt; q-&gt;val ? p-&gt;val : q-&gt;val;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (root-&gt;val &lt; min)</span><br><span class="line">            <span class="keyword">return</span> lowestCommonAncestor(root-&gt;right,p,q);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (root-&gt;val &gt; max)</span><br><span class="line">            <span class="keyword">return</span> lowestCommonAncestor(root-&gt;left,p,q);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-13-RomantoInteger" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -599,135 +742,6 @@
 <p>Supposed the linked list is <code>1 -&gt; 2 -&gt; 3 -&gt; 4</code> and you &gt;are &gt;given the third node with value <code>3</code>, the linked list &gt;should &gt;become <code>1 -&gt; 2 -&gt; 4</code> after calling your function.</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        ListNode *tmp = node-&gt;next;</span><br><span class="line">        node-&gt;val = tmp-&gt;val;</span><br><span class="line">        node-&gt;next = tmp-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-283-MoveZeroes" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/08/283-MoveZeroes/" class="article-date">
-  	<time datetime="2016-06-08T02:56:41.000Z" itemprop="datePublished">2016-06-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/08/283-MoveZeroes/">283. Move Zeroes</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Given an array <code>nums</code>, write a function to move all <code>0</code>‘s to &gt;the end of it while maintaining the relative order of the &gt;non-zero elements.</p>
-<p>For example, given <code>nums = [0, 1, 0, 3, 12]</code>, after calling &gt;your function, <code>nums</code> should be <code>[1, 3, 12, 0, 0]</code>.</p>
-</blockquote>
-<p><strong>题意：</strong></p>
-<p>给一组数，把0都移动到数组后方。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != <span class="number">0</span>)</span><br><span class="line">                nums[pos++] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = pos; i &lt; nums.size(); i++)</span><br><span class="line">            nums[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-226-InvertBinaryTree" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/07/226-InvertBinaryTree/" class="article-date">
-  	<time datetime="2016-06-07T09:19:27.000Z" itemprop="datePublished">2016-06-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/07/226-InvertBinaryTree/">226. Invert Binary Tree</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Invert a binary tree.</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     4</span><br><span class="line">   /   \</span><br><span class="line">  2     7</span><br><span class="line"> / \   / \</span><br><span class="line">1   3 6   9</span><br></pre></td></tr></table></figure>
-<p>to</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     4</span><br><span class="line">   /   \</span><br><span class="line">  7     2</span><br><span class="line"> / \   / \</span><br><span class="line">9   6 3   1</span><br></pre></td></tr></table></figure>
-<p><strong>1.递归</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">invertTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        TreeNode *tmp = root-&gt;left;</span><br><span class="line">        root-&gt;left = invertTree(root-&gt;right);</span><br><span class="line">        root-&gt;right = invertTree(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>2.非递归</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">invertTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode *&gt; p;</span><br><span class="line">        p.push(root);</span><br><span class="line">        <span class="keyword">while</span> (! p.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            TreeNode *node = p.front();</span><br><span class="line">            TreeNode *left = node-&gt;left;</span><br><span class="line">            node-&gt;left = node-&gt;right;</span><br><span class="line">            node-&gt;right = left;</span><br><span class="line">            p.pop();</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (node-&gt;left != <span class="literal">NULL</span>)</span><br><span class="line">                p.push(node-&gt;left);</span><br><span class="line">            <span class="keyword">if</span> (node-&gt;right != <span class="literal">NULL</span>)</span><br><span class="line">                p.push(node-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
