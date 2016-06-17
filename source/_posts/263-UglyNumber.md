@@ -1,5 +1,5 @@
 ---
-title: 263。 Ugly Number
+title: 263. Ugly Number
 date: 2016-06-16 11:22:51
 tags: leetcode
 ---
