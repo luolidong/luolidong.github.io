@@ -4,21 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>263. Ugly Number | Luolidong blog</title>
+  <title>141. Linked List Cycle | Luolidong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Write a program to check whether a given number is an ugly number.
-Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 6, 8 are ugly while 14 is not ugly since it">
+  <meta name="description" content="Given a linked list, determine if it has a cycle in it.
+
+题意分析：判断一个链表是否有换。方法一：遍历每一个节点，并放入set中，若发现set中有相同的节点则说明有环。方法二：用快慢指针。慢指针的步数是1，快指针步数为2，若存在环则在某一个时刻，快指针等于慢指针。
+123456789101112131415class Solution &amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="263. Ugly Number">
-<meta property="og:url" content="http://yoursite.com/2016/06/16/263-UglyNumber/index.html">
+<meta property="og:title" content="141. Linked List Cycle">
+<meta property="og:url" content="http://yoursite.com/2016/06/17/141-LinkedListCycle/index.html">
 <meta property="og:site_name" content="Luolidong blog">
-<meta property="og:description" content="Write a program to check whether a given number is an ugly number.
-Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 6, 8 are ugly while 14 is not ugly since it">
-<meta property="og:updated_time" content="2016-06-17T03:42:31.841Z">
+<meta property="og:description" content="Given a linked list, determine if it has a cycle in it.
+
+题意分析：判断一个链表是否有换。方法一：遍历每一个节点，并放入set中，若发现set中有相同的节点则说明有环。方法二：用快慢指针。慢指针的步数是1，快指针步数为2，若存在环则在某一个时刻，快指针等于慢指针。
+123456789101112131415class Solution &amp;#">
+<meta property="og:updated_time" content="2016-06-20T01:47:51.715Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="263. Ugly Number">
-<meta name="twitter:description" content="Write a program to check whether a given number is an ugly number.
-Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 6, 8 are ugly while 14 is not ugly since it">
+<meta name="twitter:title" content="141. Linked List Cycle">
+<meta name="twitter:description" content="Given a linked list, determine if it has a cycle in it.
+
+题意分析：判断一个链表是否有换。方法一：遍历每一个节点，并放入set中，若发现set中有相同的节点则说明有环。方法二：用快慢指针。慢指针的步数是1，快指针步数为2，若存在环则在某一个时刻，快指针等于慢指针。
+123456789101112131415class Solution &amp;#">
   
     <link rel="alternative" href="/atom.xml" title="Luolidong blog" type="application/atom+xml">
   
@@ -132,11 +138,11 @@ Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For 
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-263-UglyNumber" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-141-LinkedListCycle" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/16/263-UglyNumber/" class="article-date">
-  	<time datetime="2016-06-16T03:22:51.000Z" itemprop="datePublished">2016-06-16</time>
+      <a href="/2016/06/17/141-LinkedListCycle/" class="article-date">
+  	<time datetime="2016-06-17T09:32:39.000Z" itemprop="datePublished">2016-06-17</time>
 </a>
     </div>
   
@@ -149,7 +155,7 @@ Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For 
         
   
     <h1 class="article-title" itemprop="name">
-      263. Ugly Number
+      141. Linked List Cycle
     </h1>
   
 
@@ -169,11 +175,11 @@ Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Write a program to check whether a given number is an ugly number.</p>
-<p>Ugly numbers are positive numbers whose prime factors only include <code>2</code>, <code>3</code>, <code>5</code>. For example, <code>6</code>, <code>8</code> are ugly while <code>14</code> is not ugly since it includes another prime factor <code>7</code>.</p>
-<p>Note that <code>1</code> is typically treated as an ugly number.</p>
-<p>题意分析：<br>我们把只包含因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，但14不是，因为它包含因子7。习惯上我们把1当做是第一个丑数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isUgly</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">            num /= <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            num /= <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">            num /= <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">return</span> num == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>Given a linked list, determine if it has a cycle in it.</p>
+</blockquote>
+<p>题意分析：<br>判断一个链表是否有换。<br>方法一：遍历每一个节点，并放入set中，若发现set中有相同的节点则说明有环。<br>方法二：用快慢指针。慢指针的步数是1，快指针步数为2，若存在环则在某一个时刻，快指针等于慢指针。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">        ListNode *p = head;</span><br><span class="line">        <span class="keyword">while</span> (p-&gt;next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;next == head)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -183,18 +189,18 @@ Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For 
     
 <nav id="article-nav">
   
-    <a href="/2016/06/16/344-ReverseString/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/19/121-BestTimetoBuyandSellStock/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          344. Reverse String
+          121. Best Time to Buy and Sell Stock
         
       </div>
     </a>
   
   
-    <a href="/2016/06/16/83-RemoveDuplicatesfromSortedList/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">83. Remove Duplicates from Sorted List</div>
+    <a href="/2016/06/17/202-HappyNumber/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">202. Happy Number</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
