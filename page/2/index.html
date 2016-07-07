@@ -130,6 +130,251 @@
 
       <div class="body-wrap">
   
+    <article id="post-345-ReverseVowelsofaString" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/20/345-ReverseVowelsofaString/" class="article-date">
+  	<time datetime="2016-06-20T08:51:34.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/345-ReverseVowelsofaString/">345-ReverseVowelsofaString</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Write a function that takes a string as input and reverse only the vowels of a string.</p>
+<p><strong>Example 1:</strong><br>Given s = “hello”, return “holle”.</p>
+<p><strong>Example 2:</strong><br>Given s = “leetcode”, return “leotcede”.</p>
+</blockquote>
+<p>题目大意：<br>从左边开始遍历，遇到元音字母，则从右边开始遍历，遇到元音字母，则交换左右元音字母，然后继续从左边开始遍历。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isVowels</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(c) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'a'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'e'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'E'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'i'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'I'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'o'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'O'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'u'</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'U'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">reverseVowels</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.size() &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = s.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (flag == <span class="number">0</span>) &#123;</span><br><span class="line">                isVowels(s[i]) ? flag = <span class="number">1</span> : i++;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (isVowels(s[j])) &#123;</span><br><span class="line">                    <span class="keyword">char</span> c = s[i];</span><br><span class="line">                    s[i] = s[j];</span><br><span class="line">                    s[j] = c;</span><br><span class="line">                    i++;</span><br><span class="line">                    j--;</span><br><span class="line">                    flag = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-24-SwapNodesinPairs" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/20/24-SwapNodesinPairs/" class="article-date">
+  	<time datetime="2016-06-20T08:23:48.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/24-SwapNodesinPairs/">24-SwapNodesinPairs</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Given a linked list, swap every two adjacent nodes and return its head.</p>
+<p>For example,<br>Given <code>1-&gt;2-&gt;3-&gt;4</code>, you should return the list as <code>2-&gt;1-&gt;4-&gt;3</code>.</p>
+<p>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">swapPairs</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">NULL</span> || head-&gt;next == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode *root = head-&gt;next;</span><br><span class="line">        head-&gt;next = root-&gt;next;</span><br><span class="line">        root-&gt;next = head;</span><br><span class="line">        </span><br><span class="line">        ListNode *p = root-&gt;next;</span><br><span class="line">        <span class="keyword">while</span> (p-&gt;next != <span class="literal">NULL</span> &amp;&amp; p-&gt;next-&gt;next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            ListNode *one = p-&gt;next;</span><br><span class="line">            p-&gt;next = one-&gt;next;</span><br><span class="line">            one-&gt;next = p-&gt;next-&gt;next;</span><br><span class="line">            p-&gt;next-&gt;next = one;</span><br><span class="line">            p = p-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-21-MergeTwoSortedLists" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/20/21-MergeTwoSortedLists/" class="article-date">
+  	<time datetime="2016-06-20T02:45:21.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/21-MergeTwoSortedLists/">21. Merge Two Sorted Lists</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="literal">NULL</span> &amp;&amp; l2 == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (l1 == <span class="literal">NULL</span> &amp;&amp; l2 != <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (l1 != <span class="literal">NULL</span> &amp;&amp; l2 == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">            </span><br><span class="line">        ListNode *root = <span class="literal">NULL</span>;</span><br><span class="line">        ListNode *pl1 = l1;</span><br><span class="line">        ListNode *pl2 = l2;</span><br><span class="line"></span><br><span class="line">        ListNode **p = &amp;root;</span><br><span class="line">        <span class="keyword">while</span> (pl1 != <span class="literal">NULL</span> &amp;&amp; pl2 != <span class="literal">NULL</span>) &#123;</span><br><span class="line">         <span class="keyword">if</span> (pl1-&gt;val &lt; pl2-&gt;val) &#123;</span><br><span class="line">                (*p) = pl1;</span><br><span class="line">                pl1 = pl1-&gt;next;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               (*p) = pl2;</span><br><span class="line">               pl2 = pl2-&gt;next;</span><br><span class="line">          &#125;</span><br><span class="line">          p = &amp;((*p)-&gt;next);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (pl1 != <span class="literal">NULL</span>)</span><br><span class="line">            (*p) = pl1;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (pl2 != <span class="literal">NULL</span>)</span><br><span class="line">            (*p) = pl2;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-121-BestTimetoBuyandSellStock" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/19/121-BestTimetoBuyandSellStock/" class="article-date">
+  	<time datetime="2016-06-19T11:49:25.000Z" itemprop="datePublished">2016-06-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/19/121-BestTimetoBuyandSellStock/">121. Best Time to Buy and Sell Stock</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Say you have an array for which the <em>i^th</em> element is the price of a given stock on day i.</p>
+<p>If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
+</blockquote>
+<p>题目大意：<br>给一个数prices[]，prices[i]代表股票在第i天的售价，求出只做一次交易(一次买入和卖出)能得到的最大收益。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = prices.size();</span><br><span class="line">        <span class="keyword">if</span> (size &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">int</span> min = prices[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; size; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (prices[i] &lt; min) min = prices[i];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(prices[i] - min &gt; ans) ans = prices[i] - min;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-141-LinkedListCycle" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -471,250 +716,6 @@
 <p>Note that <code>1</code> is typically treated as an ugly number.</p>
 <p>题意分析：<br>我们把只包含因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，但14不是，因为它包含因子7。习惯上我们把1当做是第一个丑数。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isUgly</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">            num /= <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            num /= <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span> &amp;&amp; num % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">            num /= <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">return</span> num == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-83-RemoveDuplicatesfromSortedList" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/16/83-RemoveDuplicatesfromSortedList/" class="article-date">
-  	<time datetime="2016-06-16T02:11:45.000Z" itemprop="datePublished">2016-06-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/16/83-RemoveDuplicatesfromSortedList/">83. Remove Duplicates from Sorted List</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
-</blockquote>
-<p>For example,<br>Given <code>1-&gt;1-&gt;2</code>, return <code>1-&gt;2</code>.<br>Given <code>1-&gt;1-&gt;2-&gt;3-&gt;3</code>, return <code>1-&gt;2-&gt;3</code>.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            ListNode *p = head;</span><br><span class="line">            <span class="keyword">while</span> (p-&gt;next != <span class="literal">NULL</span>) &#123;</span><br><span class="line">                <span class="keyword">int</span> val = p-&gt;val;</span><br><span class="line">                <span class="keyword">if</span> (val == p-&gt;next-&gt;val) &#123;</span><br><span class="line">                    ListNode *tmp = p-&gt;next;</span><br><span class="line">                    p-&gt;next = p-&gt;next-&gt;next;</span><br><span class="line">                    <span class="built_in">free</span>(tmp);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    p = p-&gt;next;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-231-PowerofTwo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/16/231-PowerofTwo/" class="article-date">
-  	<time datetime="2016-06-16T02:00:45.000Z" itemprop="datePublished">2016-06-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/16/231-PowerofTwo/">231. Power of Two</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Given an integer, write a function to determine if it is a power of two.</p>
-</blockquote>
-<p>题意分析：</p>
-<p>通过计算可以知，当n = 30时，pow（2，n）为int型最大的数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (n &lt;= <span class="number">0</span>) ? <span class="literal">false</span> : ((<span class="keyword">int</span>)<span class="built_in">pow</span>(<span class="number">2</span>,<span class="number">30</span>) % n == <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-326-PowerofThree" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/16/326-PowerofThree/" class="article-date">
-  	<time datetime="2016-06-16T01:45:09.000Z" itemprop="datePublished">2016-06-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/16/326-PowerofThree/">326. Power of Three</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Given an integer, write a function to determine if it is a power of three.</p>
-</blockquote>
-<p>题意分析：</p>
-<p>n^m，n叫做幂，m叫做次方。32位int型，当n == 19是，3^n最大。<br>因此要判断一个数num是否为a power of three，可以通过3 ^ n % num。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfThree</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n &lt;= <span class="number">0</span> ? <span class="literal">false</span> : (((<span class="keyword">int</span>)<span class="built_in">pow</span>(<span class="number">3</span>,<span class="number">19</span>)) % n == <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-191-NumberofoneBits" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/15/191-NumberofoneBits/" class="article-date">
-  	<time datetime="2016-06-15T08:54:12.000Z" itemprop="datePublished">2016-06-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/15/191-NumberofoneBits/">191. Number of 1 Bits</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Write a function that takes an unsigned integer and returns the number of ‘1’ bits it has (also known as the <a href="https://en.wikipedia.org/wiki/Hamming_weight" target="_blank" rel="external">Hamming weight</a>).</p>
-<p>For example, the 32-bit integer ‘11’ has binary representation <code>00000000000000000000000000001011</code>, so the function should return <code>3</code>.</p>
-<p>题意分析：<br>通过&amp;运算来判断每一位是否为1。</p>
-<p>方法一：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">32</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">uint32_t</span> num = <span class="number">1</span> &lt;&lt; i;</span><br><span class="line">            <span class="keyword">if</span> (num &gt; n)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> ((n &amp; num) &gt; <span class="number">0</span>)</span><br><span class="line">                sum++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>方法二：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> cant=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&amp;<span class="number">1</span>)&#123;</span><br><span class="line">        cant++;</span><br><span class="line">    &#125;</span><br><span class="line">    n=n&gt;&gt;<span class="number">1</span>;</span><br><span class="line">&#125;   </span><br><span class="line"><span class="keyword">return</span> cant;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
