@@ -1,5 +1,5 @@
 ---
-title: 24-SwapNodesinPairs
+title: 24. Swap Nodes in Pairs
 date: 2016-06-20 16:23:48
 tags: leetcode
 ---

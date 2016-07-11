@@ -1,5 +1,5 @@
 ---
-title: 27 Remove Element
+title: 27. Remove Element
 date: 2016-06-29 15:05:22
 tags: leetcode
 ---

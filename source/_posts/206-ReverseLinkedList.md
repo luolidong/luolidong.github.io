@@ -1,5 +1,5 @@
 ---
-title: 206-Reverse Linked List
+title: 206. Reverse Linked List
 date: 2016-06-12 10:14:41
 tags: leetcode
 ---

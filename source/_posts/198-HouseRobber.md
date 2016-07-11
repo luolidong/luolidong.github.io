@@ -1,5 +1,5 @@
 ---
-title: 198-HouseRobber
+title: 198. HouseRobber
 date: 2016-06-21 15:41:44
 tags: leetcode
 ---

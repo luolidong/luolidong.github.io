@@ -1,5 +1,5 @@
 ---
-title: 258 Add Digits
+title: 258. Add Digits
 date: 2016-06-07 15:11:03
 tags: leetcode
 ---

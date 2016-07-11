@@ -1,5 +1,5 @@
 ---
-title: 292 Nim Game
+title: 292. Nim Game
 date: 2016-06-07 14:28:15
 tags: leetcode
 ---

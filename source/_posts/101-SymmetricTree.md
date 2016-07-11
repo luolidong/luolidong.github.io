@@ -15,7 +15,7 @@ tags: leetcode
    3   4 4   3  
 ```
 But the following `[1,2,2,null,3,null,3]` is not:
-```c++
+```
     1
    / \
   2   2

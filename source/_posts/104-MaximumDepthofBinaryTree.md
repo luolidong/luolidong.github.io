@@ -1,5 +1,5 @@
 ---
-title: 104 Maximum Depth of Binary Tree
+title: 104. Maximum Depth of Binary Tree
 date: 2016-06-07 16:39:03
 tags: leetcode
 ---

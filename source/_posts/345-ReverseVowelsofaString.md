@@ -1,5 +1,5 @@
 ---
-title: 345-ReverseVowelsofaString
+title: 345. Reverse Vowels of a String
 date: 2016-06-20 16:51:34
 tags: leetcode
 ---

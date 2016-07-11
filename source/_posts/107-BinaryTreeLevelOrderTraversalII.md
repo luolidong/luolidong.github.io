@@ -1,5 +1,5 @@
 ---
-title: 107 Binary Tree Level Order Traversal II
+title: 107. Binary Tree Level Order Traversal II
 date: 2016-06-22 10:11:09
 tags: leetcode
 ---
@@ -25,7 +25,7 @@ Given binary tree `[3,9,20,null,null,15,7]`,
 ```
 
 一 递归
-```
+```c++
 class Solution {
     void travel(TreeNode *node,vector<vector<int>> &vec,int hight)
     {
@@ -52,7 +52,7 @@ public:
 ```
 
 二 用双队列
-```
+```c++
 class Solution {
 public:
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
