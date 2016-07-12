@@ -4,30 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>206. Reverse Linked List | Luolidong blog</title>
+  <title>26. Remove Duplicates from Sorted Array | Luolidong blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Reverse a singly linked list.
-
-题目分析：
-用stack的思想进行反转，依次push，最后栈顶元素为list的头结点。
-123456789101112131415161718class Solution &amp;#123;public:    ListNode* reverseList(ListNode* head) &amp;#123;        if (head == N">
+  <meta name="description" content="Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+Do not allocate extra space for another array, you must do this in place with c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="206. Reverse Linked List">
-<meta property="og:url" content="http://yoursite.com/2016/06/12/206-ReverseLinkedList/index.html">
+<meta property="og:title" content="26. Remove Duplicates from Sorted Array">
+<meta property="og:url" content="http://yoursite.com/2016/07/07/26-RemoveDuplicatesfromSortedArray/index.html">
 <meta property="og:site_name" content="Luolidong blog">
-<meta property="og:description" content="Reverse a singly linked list.
-
-题目分析：
-用stack的思想进行反转，依次push，最后栈顶元素为list的头结点。
-123456789101112131415161718class Solution &amp;#123;public:    ListNode* reverseList(ListNode* head) &amp;#123;        if (head == N">
-<meta property="og:updated_time" content="2016-07-11T02:04:18.886Z">
+<meta property="og:description" content="Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+Do not allocate extra space for another array, you must do this in place with c">
+<meta property="og:updated_time" content="2016-07-07T03:46:18.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="206. Reverse Linked List">
-<meta name="twitter:description" content="Reverse a singly linked list.
-
-题目分析：
-用stack的思想进行反转，依次push，最后栈顶元素为list的头结点。
-123456789101112131415161718class Solution &amp;#123;public:    ListNode* reverseList(ListNode* head) &amp;#123;        if (head == N">
+<meta name="twitter:title" content="26. Remove Duplicates from Sorted Array">
+<meta name="twitter:description" content="Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+Do not allocate extra space for another array, you must do this in place with c">
   
     <link rel="alternative" href="/atom.xml" title="Luolidong blog" type="application/atom+xml">
   
@@ -141,11 +132,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-206-ReverseLinkedList" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-26-RemoveDuplicatesfromSortedArray" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/12/206-ReverseLinkedList/" class="article-date">
-  	<time datetime="2016-06-12T02:14:41.000Z" itemprop="datePublished">2016-06-12</time>
+      <a href="/2016/07/07/26-RemoveDuplicatesfromSortedArray/" class="article-date">
+  	<time datetime="2016-07-07T03:44:29.000Z" itemprop="datePublished">2016-07-07</time>
 </a>
     </div>
   
@@ -158,7 +149,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      206. Reverse Linked List
+      26. Remove Duplicates from Sorted Array
     </h1>
   
 
@@ -179,11 +170,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Reverse a singly linked list.</p>
+<p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
+<p>For example,<br>Given input array nums = <code>[1,1,2]</code>,</p>
+<p>Your function should return length = <code>2</code>, with the first two elements of nums being <code>1</code> and <code>2</code> respectively. It doesn’t matter what you leave beyond the new length.</p>
 </blockquote>
-<p>题目分析：</p>
-<p>用stack的思想进行反转，依次push，最后栈顶元素为list的头结点。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">            </span><br><span class="line">        ListNode *s = <span class="literal">NULL</span>;</span><br><span class="line">        ListNode *p = head;</span><br><span class="line">        <span class="keyword">while</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ListNode *q = p-&gt;next;</span><br><span class="line">            p-&gt;next = s;</span><br><span class="line">            s = p;</span><br><span class="line">            p = q;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">                num++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[num - <span class="number">1</span>] != nums[i]) &#123;</span><br><span class="line">                nums[num] = nums[i];</span><br><span class="line">                num++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (num != nums.size())</span><br><span class="line">            nums.resize(num);</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -192,18 +184,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/06/12/13-RomantoInteger/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/07/08/102-BinaryTreeLevelOrderTraversal/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          13. Roman to Integer
+          102. Binary Tree Level Order Traversal
         
       </div>
     </a>
   
   
-    <a href="/2016/06/12/217-ContainsDuplicate/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">217. Contains Duplicate</div>
+    <a href="/2016/07/07/232-ImplementQueueusingStacks/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">232. Implement Queue using Stacks</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
