@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Luolidong blog
+title: Loki blog
 subtitle: one is all.all is one
-description: 
-author: Luolidong
-language:
+description: 一个人的朝圣
+author: Loki
+language: zh-Hans
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -71,3 +71,5 @@ deploy:
   type: git
   repo: git@github.com:luolidong/luolidong.github.io.git
   branch: master
+
+avatar: http://o7mi4viua.bkt.clouddn.com/image/jpg/rabbit.jpg

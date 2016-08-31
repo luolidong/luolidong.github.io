@@ -4,6 +4,7 @@ menu:
   所有文章: /archives
   leetcode: /tags/leetcode
   大数据: /tags/bigData
+  SaltStack: /tags/saltStack
 
 # SubNav
 subnav:
